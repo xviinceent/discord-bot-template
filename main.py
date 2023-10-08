@@ -8,7 +8,7 @@ class MyBot(commands.Bot):
     def __init__(self):
         super().__init__(
             command_prefix = "!",
-            intents = discord.Intents.default())
+            intents = discord.Intents.all())
 
     async def setup_hook(self):
         self.session = aiohttp.ClientSession()
