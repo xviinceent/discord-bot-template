@@ -13,7 +13,7 @@ pip install -r requirements.txt -y
 ```
 
 ## Step 3
-Create a .env file that looks like this and paste your bot token that you can get in the "Bot" section after you've created your application in the [Discord Developer Portal](https://discord.com/developers/applications)
+Create a .env file that looks like this and paste your bot token that you can get in the "Bot" section after you've created your application in the [Discord Developer Portal](https://discord.com/developers/applications). Enable all Privileged Gateway Intents as well.
 ```
 TOKEN = 
 ```
