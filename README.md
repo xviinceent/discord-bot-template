@@ -9,7 +9,7 @@ git clone https://github.com/lynix27/discord-bot-template
 ## Step 2
 Install the dependencies by using
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt -y
 ```
 
 ## Step 3
