@@ -3,7 +3,7 @@
 ## Step 1
 Clone this repository by using
 ```bash
-git clone https://github.com/lynix27/discord-bot-template
+git clone https://github.com/vxsualized/discord-bot-template
 ```
 
 ## Step 2
