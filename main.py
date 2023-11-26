@@ -24,7 +24,7 @@ class MyBot(commands.Bot):
             
 bot = MyBot()
 
-# message command: can be accessed by typing !ping in chat
+# example message command: can be accessed by typing !ping in the chat
 @bot.command()
 async def ping(ctx: commands.Context):
     await ctx.send(f'🏓 Pong! {round(bot.latency * 1000)}ms')
