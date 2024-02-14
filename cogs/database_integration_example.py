@@ -14,10 +14,10 @@ class DatabaseIntegrationExample(commands.Cog):
     async def save_file(self, ctx: commands.Context, attachment: discord.Attachment | None):
         await ctx.defer(ephemeral=True)
         if attachment is None:
-            await ctx.reply("You haven't selected an attachment!", ephemeral=True)
+            await ctx.reply("You haven't selected a file!", ephemeral=True)
         else:
             if attachment.size / 1024 > 10000:
-                await ctx.reply("Attachment is too large! Maximum size is 10MB", ephemeral=True)
+                await ctx.reply("File is too large! Maximum size is 10MB", ephemeral=True)
                 return
             # connect to the database
             conn = await aiosqlite.connect("database.db")
@@ -35,12 +35,12 @@ class DatabaseIntegrationExample(commands.Cog):
             await conn.commit()
             await cursor.close()
             await conn.close()
-            await ctx.reply("Image saved!", ephemeral=True)
+            await ctx.reply("File saved!", ephemeral=True)
 
     # hybrid command for loading the save file (can be executed via the slash command picker or by typing !load-file)
     @commands.hybrid_command(name="load-file")
     async def load_file(self, ctx: commands.Context):
-        await ctx.defer()
+        await ctx.defer(ephemeral=True)
         # connect to the database
         conn = await aiosqlite.connect("database.db")
         cursor = await conn.cursor()
