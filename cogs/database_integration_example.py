@@ -40,7 +40,7 @@ class DatabaseIntegrationExample(commands.Cog):
     # hybrid command for loading the save file (can be executed via the slash command picker or by typing !load-file)
     @commands.hybrid_command(name="load-file")
     async def load_file(self, ctx: commands.Context):
-        await ctx.defer(ephemeral=True)
+        await ctx.defer()
         # connect to the database
         conn = await aiosqlite.connect("database.db")
         cursor = await conn.cursor()
@@ -52,7 +52,7 @@ class DatabaseIntegrationExample(commands.Cog):
         if result is None:
             await cursor.close()
             await conn.close()
-            await ctx.reply("No file found!", ephemeral=True)
+            await ctx.reply("No file found!")
         else:
             # convert the attachment to bytes
             attachment_bytes = result[0]
