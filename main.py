@@ -36,12 +36,6 @@ bot = MyBot()
 async def ping(ctx: commands.Context):
     await ctx.send(f'🏓 Pong! Latency: {round(bot.latency * 1000)}ms')
 
-@bot.tree.command(name="set-avatar")
-async def set_avatar(interaction: discord.Interaction, attachment: discord.Attachment):
-    await interaction.response.defer(ephemeral=True, thinking=True)
-    attachment_bytes = await attachment.read()
-    await interaction.client.user.edit(avatar=attachment_bytes)
-    await interaction.followup.send("Successfully updated avatar!", ephemeral=True)
 
 load_dotenv()
 bot.run(os.getenv("TOKEN"))
